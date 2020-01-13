@@ -1,12 +1,20 @@
 class CharactersController < ApplicationController
 
   def new
+    @character = Character.new
   end
 
   def create
     # character = Character.find_by name: params[:name]
+    # raise 'hell'
+    # Create the new character using the params passed through from
+    # the form
+    @character = Character.create name: params[:character][:name], server: params[:character][:server], spec: params[:character][:spec], subspec: params[:character][:subspec]
 
-    redirect_to character_path(character.id)
+    # redirect_to character_path(character.id)
+
+    redirect_to user_path(@current_user.id)
+
 
   end
 
@@ -18,11 +26,6 @@ class CharactersController < ApplicationController
 
   def destroy
   end
-  private
-  # def user_params
-  #
-  #   params.require(:user).permit( :name, :server, :subclass, :password_confirmation )
-  #
-  # end
+
 
 end

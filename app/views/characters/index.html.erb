@@ -1,0 +1,9 @@
+<h2>Your Characters</h2>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= user.name %>
+    </li>
+  <% end %>
+</ul>

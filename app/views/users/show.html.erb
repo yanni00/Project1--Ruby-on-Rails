@@ -1,5 +1,13 @@
-<<h2>Profile Page for <%= @user.name %></h2>
+<h2>Profile Page for <%= @user.name %></h2>
 
-<li>Characters</li>
-<%= link_to 'Characters', new_character_path %>
-Hello etc etc
+<!-- <li>Characters</li> -->
+<ul>
+
+<% @characters.each do |h| %>
+  <li><%= link_to h.name, character_path(h.id) %></li>
+  <% end %>
+
+</ul>
+
+
+<%= link_to 'Create a new Character', new_character_path %>

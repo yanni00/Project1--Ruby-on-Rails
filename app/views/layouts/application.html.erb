@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>YumCha</title>
     <%= csrf_meta_tags %>
@@ -18,7 +19,7 @@
         <% if @current_user.present? %>
           Welcome, <%= @current_user.name %>
           <% if @current_user.admin? %>
-            (admin)
+          (Admin Level Account)
           <% end  %>
 
           <%= link_to 'Logout', login_path, method: 'delete' %>
@@ -34,6 +35,11 @@
 
     <%= yield %>
     <footer>
+      <hr>
+        <br>
+        <%= link_to 'Home', root_path %>
+        <br>
+        <%= link_to 'Characters', characters_path %>
       <hr>
       "&copy;" Yum Cha Guild Charter
     </footer>

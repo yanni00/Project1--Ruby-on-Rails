@@ -14,3 +14,7 @@ puts "Creating characters"
 c1 = Character.create! name: "Woahmen", user: u1
 
 puts "#{Character.count} characters created"
+
+Posts.destroy_all
+
+puts "Destroying Posts"

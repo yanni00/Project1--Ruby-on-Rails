@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  root 'posts#index'
+
+  get 'about' => 'pages#about'
 
   # Session (login form/form submit/logout) routes:
   get '/login' => 'session#new'        # login platforms
@@ -13,4 +16,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :characters
+
+  resources :posts
+  
 end

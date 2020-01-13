@@ -1,7 +1,7 @@
 <h2>Create New Character</h2>
 
 
-<%= form_with do|f| %>
+<%= form_for @character do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name %>
