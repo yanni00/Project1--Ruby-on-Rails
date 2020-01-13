@@ -1,0 +1,27 @@
+<h2>Create New Character</h2>
+
+
+<%= form_with do|f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+
+  <%= f.label :server %>
+  <%= f.text_field :server %>
+  <br>
+
+  <%= f.label :class %>
+  <%= f.text_field :class %>
+  <br>
+
+  <%= f.label :subclass %>
+  <%= f.text_field :subclass %>
+  <br>
+
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+  <br>
+
+  <%= submit_tag 'Add Character' %>
+<% end %>
