@@ -19,10 +19,10 @@ class CharactersController < ApplicationController
   def destroy
   end
   private
-  def user_params
-
-    params.require(:user).permit( :name, :server, :subclass, :password_confirmation )
-
-  end
+  # def user_params
+  #
+  #   params.require(:user).permit( :name, :server, :subclass, :password_confirmation )
+  #
+  # end
 
 end

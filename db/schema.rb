@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2020_01_13_031727) do
   create_table "characters", force: :cascade do |t|
     t.text "name"
     t.text "server"
-    t.text "class"
-    t.text "subclass"
+    t.text "spec"
+    t.text "subspec"
     t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

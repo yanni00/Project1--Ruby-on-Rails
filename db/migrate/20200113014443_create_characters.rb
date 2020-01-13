@@ -3,8 +3,8 @@ class CreateCharacters < ActiveRecord::Migration[5.2]
     create_table :characters do |t|
       t.text :name
       t.text :server
-      t.text :class
-      t.text :subclass
+      t.text :spec
+      t.text :subspec
       t.text :image
 
       t.timestamps
