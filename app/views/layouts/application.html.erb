@@ -23,6 +23,9 @@
           <% end  %>
 
           <%= link_to 'Logout', login_path, method: 'delete' %>
+          <%= link_to 'Forum', root_path %>
+          <%= link_to 'Characters', characters_path %>
+
         <% else %>
           <%= link_to 'Login', login_path %>
            |
@@ -36,11 +39,7 @@
     <%= yield %>
     <footer>
       <hr>
-        <br>
-        <%= link_to 'Home', root_path %>
-        <br>
-        <%= link_to 'Characters', characters_path %>
-      <hr>
+
       "&copy;" Yum Cha Guild Charter
     </footer>
   </body>

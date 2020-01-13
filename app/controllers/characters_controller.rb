@@ -19,6 +19,7 @@ class CharactersController < ApplicationController
   end
 
   def show
+    redirect_to user_path(@current_user.id)
   end
 
   def update
