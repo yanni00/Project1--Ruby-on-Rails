@@ -6149,3 +6149,314 @@ Migrating to AddUserIdToCharacters (20200113031727)
   ↳ db/seeds.rb:3
   [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:3
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:3
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "yanni"], ["email", "yanni@test.com"], ["created_at", "2020-01-13 03:44:31.389725"], ["updated_at", "2020-01-13 03:44:31.389725"], ["password_digest", "$2a$12$efHX7Tj/WmqAmT1Vauyyye4vYZzme1ML952jufXb.QV7S6c.ODUoK"], ["admin", true]]
+  ↳ db/seeds.rb:3
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (1.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:1
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:3
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "yanni"], ["email", "yanni@test.com"], ["created_at", "2020-01-13 03:44:58.582262"], ["updated_at", "2020-01-13 03:44:58.582262"], ["password_digest", "$2a$12$pzE47tlRJ7I1iaZSMlTfiOVjYKY3G4u1I2ClvzjZz/XAdlNbt9MYG"], ["admin", true]]
+  ↳ db/seeds.rb:3
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:3
+Started GET "/characters/new" for ::1 at 2020-01-13 14:45:26 +1100
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by CharactersController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 355ms (Views: 316.8ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/login" for ::1 at 2020-01-13 14:45:28 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 30ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-01-13 14:45:33 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9bZxybpZpcc3+mR9q41+Ulu+k3i4fvDwYU+I8deanSE07QthKM2XLhup9WJybU8Q42Mck4mOrOHAQrdZVCVqpQ==", "email"=>"yanni@test.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:8
+Redirected to http://localhost:3000/login
+Completed 302 Found in 392ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/login" for ::1 at 2020-01-13 14:45:33 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-01-13 14:45:39 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y/qdna1T7qu4k3TcJMlsVA9D2UVhHJjAZWELqxEC98Sioec1P8fcQpTA5cP9KV0Wt55WrlDsxNHEbDQDkr0AQA==", "email"=>"yanni@test.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:8
+Redirected to http://localhost:3000/users/12
+Completed 302 Found in 375ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/12" for ::1 at 2020-01-13 14:45:39 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 28ms (Views: 22.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/characters/new" for ::1 at 2020-01-13 14:45:43 +1100
+Processing by CharactersController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 37ms (Views: 27.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/characters/new" for ::1 at 2020-01-13 14:45:54 +1100
+Processing by CharactersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5uML/21jK7U+ep4YxDJ7hDI43hjiNW5ljL5w1EC2aXQnuHFX//cZXBIpDwcd0krGiuVR89PFMnQts098wwme8A==", "name"=>"Woahmen", "server"=>"Arugal", "class"=>"warlock", "subclass"=>"sm-ruin", "image"=>"", "commit"=>"Add Character"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 500 Internal Server Error in 163ms (ActiveRecord: 0.5ms)
+
+
+  
+NameError (undefined local variable or method `character' for #<CharactersController:0x007fb05c868dc8>
+Did you mean?  character_url):
+  
+app/controllers/characters_controller.rb:9:in `create'
+Started GET "/characters/new" for ::1 at 2020-01-13 14:46:15 +1100
+Processing by CharactersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 68ms (Views: 26.4ms | ActiveRecord: 11.5ms)
+
+
+Started POST "/characters/new" for ::1 at 2020-01-13 14:46:30 +1100
+Processing by CharactersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HFthHw13RSleh/eWJuKEX1LfKIA+pJWi7NPcVgFW9CLdABu3n+N3wHLUZon/ArUd6gKnaw9UybNN3uP+gukDpg==", "name"=>"Woahmen", "server"=>"Arugal", "class"=>"warlock", "subclass"=>"sm-ruin", "image"=>"", "commit"=>"Add Character"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 0.5ms)
+
+
+  
+NameError (undefined local variable or method `characters' for #<CharactersController:0x007fb057d55688>
+Did you mean?  characters_url):
+  
+app/controllers/characters_controller.rb:9:in `create'
+Started POST "/characters/new" for ::1 at 2020-01-13 14:46:33 +1100
+Processing by CharactersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HFthHw13RSleh/eWJuKEX1LfKIA+pJWi7NPcVgFW9CLdABu3n+N3wHLUZon/ArUd6gKnaw9UybNN3uP+gukDpg==", "name"=>"Woahmen", "server"=>"Arugal", "class"=>"warlock", "subclass"=>"sm-ruin", "image"=>"", "commit"=>"Add Character"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (undefined local variable or method `characters' for #<CharactersController:0x007fb057370cd0>
+Did you mean?  characters_url):
+  
+app/controllers/characters_controller.rb:9:in `create'
+Started POST "/characters/new" for ::1 at 2020-01-13 14:47:44 +1100
+Processing by CharactersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HFthHw13RSleh/eWJuKEX1LfKIA+pJWi7NPcVgFW9CLdABu3n+N3wHLUZon/ArUd6gKnaw9UybNN3uP+gukDpg==", "name"=>"Woahmen", "server"=>"Arugal", "class"=>"warlock", "subclass"=>"sm-ruin", "image"=>"", "commit"=>"Add Character"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 500 Internal Server Error in 274ms (ActiveRecord: 13.3ms)
+
+
+  
+NameError (undefined local variable or method `characters' for #<CharactersController:0x007fb05d82e960>
+Did you mean?  characters_url):
+  
+app/controllers/characters_controller.rb:9:in `create'
+Started POST "/characters/new" for ::1 at 2020-01-13 14:47:56 +1100
+Processing by CharactersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HFthHw13RSleh/eWJuKEX1LfKIA+pJWi7NPcVgFW9CLdABu3n+N3wHLUZon/ArUd6gKnaw9UybNN3uP+gukDpg==", "name"=>"Woahmen", "server"=>"Arugal", "class"=>"warlock", "subclass"=>"sm-ruin", "image"=>"", "commit"=>"Add Character"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 500 Internal Server Error in 167ms (ActiveRecord: 0.6ms)
+
+
+  
+NameError (undefined local variable or method `characters' for #<CharactersController:0x007fb057e5f150>
+Did you mean?  characters_url):
+  
+app/controllers/characters_controller.rb:9:in `create'
+Started GET "/characters/new" for ::1 at 2020-01-13 14:48:07 +1100
+Processing by CharactersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 92ms (Views: 48.7ms | ActiveRecord: 11.8ms)
+
+
+Started POST "/characters/new" for ::1 at 2020-01-13 14:48:19 +1100
+Processing by CharactersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FIm0qTilU8hM0smGzEwGP1UqGSfoD5TGm0QCmOwDSX/V0s4BqjFhIWCBWJkVrDd97feWzNn/yNc6ST0wb7y++w==", "name"=>"Woahmen", "server"=>"", "class"=>"", "subclass"=>"", "image"=>"", "commit"=>"Add Character"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 0.5ms)
+
+
+  
+NameError (undefined local variable or method `characters' for #<CharactersController:0x007fb05bc162a0>
+Did you mean?  characters_url):
+  
+app/controllers/characters_controller.rb:9:in `create'
+Started POST "/characters/new" for ::1 at 2020-01-13 14:48:23 +1100
+Processing by CharactersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FIm0qTilU8hM0smGzEwGP1UqGSfoD5TGm0QCmOwDSX/V0s4BqjFhIWCBWJkVrDd97feWzNn/yNc6ST0wb7y++w==", "name"=>"Woahmen", "server"=>"Arugal", "class"=>"warlock", "subclass"=>"sm-ruin", "image"=>"", "commit"=>"Add Character"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 500 Internal Server Error in 136ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (undefined local variable or method `characters' for #<CharactersController:0x007fb05bacdc90>
+Did you mean?  characters_url):
+  
+app/controllers/characters_controller.rb:9:in `create'
+Started POST "/characters/new" for ::1 at 2020-01-13 14:48:24 +1100
+Processing by CharactersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FIm0qTilU8hM0smGzEwGP1UqGSfoD5TGm0QCmOwDSX/V0s4BqjFhIWCBWJkVrDd97feWzNn/yNc6ST0wb7y++w==", "name"=>"Woahmen", "server"=>"Arugal", "class"=>"warlock", "subclass"=>"sm-ruin", "image"=>"", "commit"=>"Add Character"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 0.6ms)
+
+
+  
+NameError (undefined local variable or method `characters' for #<CharactersController:0x007fb05bbbef28>
+Did you mean?  characters_url):
+  
+app/controllers/characters_controller.rb:9:in `create'
+Started POST "/characters/new" for ::1 at 2020-01-13 14:51:17 +1100
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by CharactersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FIm0qTilU8hM0smGzEwGP1UqGSfoD5TGm0QCmOwDSX/V0s4BqjFhIWCBWJkVrDd97feWzNn/yNc6ST0wb7y++w==", "name"=>"Woahmen", "server"=>"Arugal", "class"=>"warlock", "subclass"=>"sm-ruin", "image"=>"", "commit"=>"Add Character"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 11.2ms)
+
+
+  
+NameError (undefined local variable or method `characters' for #<CharactersController:0x007fcc66830ab0>
+Did you mean?  characters_url):
+  
+app/controllers/characters_controller.rb:9:in `create'
+Started POST "/characters/new" for ::1 at 2020-01-13 14:51:57 +1100
+Processing by CharactersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FIm0qTilU8hM0smGzEwGP1UqGSfoD5TGm0QCmOwDSX/V0s4BqjFhIWCBWJkVrDd97feWzNn/yNc6ST0wb7y++w==", "name"=>"Woahmen", "server"=>"Arugal", "class"=>"warlock", "subclass"=>"sm-ruin", "image"=>"", "commit"=>"Add Character"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 0.6ms)
+
+
+  
+NameError (undefined local variable or method `characters' for #<CharactersController:0x007fcc62677330>
+Did you mean?  characters_url):
+  
+app/controllers/characters_controller.rb:9:in `create'
+Started GET "/characters/new" for ::1 at 2020-01-13 14:52:48 +1100
+Processing by CharactersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 334ms (Views: 287.2ms | ActiveRecord: 14.4ms)
+
+
+Started POST "/characters/new" for ::1 at 2020-01-13 14:52:55 +1100
+Processing by CharactersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rSV5B7weR2x/owMDWsK4/JATlZARYv1s/yakHLD4VFtsfgOvLop1hVPwkhyDIom+KM4aeyCSoX1eK5u0M0ej3w==", "name"=>"Woahmen", "server"=>"Arugal", "class"=>"warlock", "subclass"=>"sm-ruin", "image"=>"", "commit"=>"Add Character"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 0.9ms)
+
+
+  
+NameError (undefined local variable or method `character' for #<CharactersController:0x007fcc67a3a148>
+Did you mean?  character_url):
+  
+app/controllers/characters_controller.rb:9:in `create'
+Started POST "/characters/new" for ::1 at 2020-01-13 14:53:56 +1100
+Processing by CharactersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rSV5B7weR2x/owMDWsK4/JATlZARYv1s/yakHLD4VFtsfgOvLop1hVPwkhyDIom+KM4aeyCSoX1eK5u0M0ej3w==", "name"=>"Woahmen", "server"=>"Arugal", "class"=>"warlock", "subclass"=>"sm-ruin", "image"=>"", "commit"=>"Add Character"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 9.9ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/characters_controller.rb:9:in `create'
+Started POST "/characters/new" for ::1 at 2020-01-13 14:54:11 +1100
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by CharactersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rSV5B7weR2x/owMDWsK4/JATlZARYv1s/yakHLD4VFtsfgOvLop1hVPwkhyDIom+KM4aeyCSoX1eK5u0M0ej3w==", "name"=>"Woahmen", "server"=>"Arugal", "class"=>"warlock", "subclass"=>"sm-ruin", "image"=>"", "commit"=>"Add Character"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 10.4ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/characters_controller.rb:9:in `create'
+Started POST "/characters/new" for ::1 at 2020-01-13 14:56:04 +1100
+Processing by CharactersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rSV5B7weR2x/owMDWsK4/JATlZARYv1s/yakHLD4VFtsfgOvLop1hVPwkhyDIom+KM4aeyCSoX1eK5u0M0ej3w==", "name"=>"Woahmen", "server"=>"Arugal", "class"=>"warlock", "subclass"=>"sm-ruin", "image"=>"", "commit"=>"Add Character"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 500 Internal Server Error in 179ms (ActiveRecord: 10.6ms)
+
+
+  
+NameError (undefined local variable or method `character' for #<CharactersController:0x007fded032d4d8>
+Did you mean?  character_url):
+  
+app/controllers/characters_controller.rb:9:in `create'
