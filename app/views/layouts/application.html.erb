@@ -12,8 +12,8 @@
 
   <body>
 
-    <h1>Yum Cha Guild Database</h1>
-
+    <!-- <h1>Yum Cha Guild Database</h1> -->
+    <h1><%= link_to 'Yum Cha Guild Database', root_path %></h1>
     <header>
       <nav>
         <% if @current_user.present? %>
@@ -22,9 +22,7 @@
           (Admin Level Account)
           <% end  %>
 
-          <%= link_to 'Logout', login_path, method: 'delete' %>
-          <%= link_to 'Forum', root_path %>
-          <%= link_to 'Characters', characters_path %>
+          <h3><%= link_to 'Logout', login_path, method: 'delete' %> <%= link_to 'Forum', root_path %> <%= link_to 'Characters', characters_path %></h3>
 
         <% else %>
           <%= link_to 'Login', login_path %>

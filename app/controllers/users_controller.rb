@@ -46,7 +46,8 @@ class UsersController < ApplicationController
 
     # Show pages can ONLY be seen by logged-in users
     @user = User.find params[:id]
-    @characters = Character.all
+    @characters = Character.where :user => @current_user
+
 
   end #Show
 

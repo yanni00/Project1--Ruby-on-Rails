@@ -1,1 +1,6 @@
-<h2><%= @characters %></h2>
+<%= link_to 'Add Character', new_character_path %>
+<% @character.each do |character| %>
+  <li>
+    <%= character.name %>
+  </li>
+<% end %>

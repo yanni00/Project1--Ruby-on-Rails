@@ -9,14 +9,11 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'    # form submit, check credentials, create Session
   delete '/login' => 'session#destroy' # logout (delete session)
 
-  get '/characters/new' => 'characters#new'
-  post '/characters/new' => 'characters#create'
-  delete '/characters/new' =>'characters#delete'
 
   resources :users
 
   resources :characters
 
   resources :posts
-  
+
 end
