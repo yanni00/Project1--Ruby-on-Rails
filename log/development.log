@@ -19130,3 +19130,1749 @@ Completed 200 OK in 51ms (Views: 43.1ms | ActiveRecord: 0.9ms)
   ↳ db/seeds.rb:16
   [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
   ↳ db/seeds.rb:18
+Started GET "/rails/info/routes" for ::1 at 2020-01-15 14:34:05 +1100
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/yanni/.rvm/gems/ruby-2.4.1/gems/railties-5.2.4.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/yanni/.rvm/gems/ruby-2.4.1/gems/actionpack-5.2.4.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [29 times] (17.6ms)
+  Rendered /Users/yanni/.rvm/gems/ruby-2.4.1/gems/actionpack-5.2.4.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.0ms)
+  Rendered /Users/yanni/.rvm/gems/ruby-2.4.1/gems/railties-5.2.4.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 102ms (Views: 57.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 14:34:10 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" IS NULL[0m
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 753ms (ActiveRecord: 8.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `cloudinary_js_config' for #<#<Class:0x007fa0545ca750>:0x007fa0545a28b8>):
+     8: 
+     9:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:     <%= cloudinary_js_config %>
+    12:   </head>
+    13: 
+    14:   <body>
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__2639673278627375906_70163293261480'
+Started GET "/" for ::1 at 2020-01-15 14:41:20 +1100
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:3
+  Rendered posts/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 443ms (Views: 414.6ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/login" for ::1 at 2020-01-15 14:41:22 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 39ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-01-15 14:41:25 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AzJsjobajFStCzyZcDspnxYQWilPU/pe6Ku3xBTxoKvX4H6mftLeb6n1T408ygEB2in//fzyydZfdl3WbSnKvQ==", "email"=>"yanni@test.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:8
+Redirected to http://localhost:3000/users/28
+Completed 302 Found in 404ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/users/28" for ::1 at 2020-01-15 14:41:26 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 96ms (Views: 48.5ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/characters/new" for ::1 at 2020-01-15 14:41:28 +1100
+Processing by CharactersController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (592.5ms)
+Completed 200 OK in 661ms (Views: 653.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/characters" for ::1 at 2020-01-15 14:41:48 +1100
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LU9clX6IinNpy4C+a8eQC+QVYJllmV1YzqFZiiV0W9z5nU69hoDYSG0186onNriVKCzFTdY4btB5fLOYXKwxyg==", "character"=>{"name"=>"Izherb", "server"=>"Arugal", "spec"=>"Warlock", "subspec"=>"SM-Ruin"}, "file"=>#<ActionDispatch::Http::UploadedFile:0x007fe13555ee70 @tempfile=#<Tempfile:/var/folders/yy/pvfchxx570jfsjsccfjsf8wh0000gp/T/RackMultipart20200115-38720-hwsep8.jpg>, @original_filename="xB8B_toxUQCJHgBdioyLCMUJ0Zuv_3osLg8x6c1kx8c.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"xB8B_toxUQCJHgBdioyLCMUJ0Zuv_3osLg8x6c1kx8c.jpg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Add Character"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:12
+  [1m[36mCharacter Create (0.9ms)[0m  [1m[32mINSERT INTO "characters" ("name", "server", "spec", "subspec", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Izherb"], ["server", "Arugal"], ["spec", "Warlock"], ["subspec", "SM-Ruin"], ["created_at", "2020-01-15 03:41:48.092154"], ["updated_at", "2020-01-15 03:41:48.092154"], ["user_id", 28]]
+  ↳ app/controllers/characters_controller.rb:12
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:12
+Redirected to http://localhost:3000/users/28
+Completed 302 Found in 11ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/users/28" for ::1 at 2020-01-15 14:41:48 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 38ms (Views: 30.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/characters/48" for ::1 at 2020-01-15 14:41:50 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: <h2>Placeholder</h2>
+    2: <%= cl_image_tag(@character.id.image) %>
+  
+app/views/characters/show.html.erb:2:in `_app_views_characters_show_html_erb__1035216250502083886_70302568695000'
+Started GET "/characters/48" for ::1 at 2020-01-15 14:42:17 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    1: <h2>Placeholder</h2>
+    2: <%= cl_image_tag(@character.image) %>
+  
+app/views/characters/show.html.erb:2:in `_app_views_characters_show_html_erb__1035216250502083886_70302570527960'
+Started GET "/characters/48" for ::1 at 2020-01-15 14:42:20 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    1: <h2>Placeholder</h2>
+    2: <%= cl_image_tag(@character.image) %>
+  
+app/views/characters/show.html.erb:2:in `_app_views_characters_show_html_erb__1035216250502083886_70302623072800'
+Started GET "/characters/48" for ::1 at 2020-01-15 14:42:27 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (7.9ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    1: <h2>Placeholder</h2>
+    2: <%= cl_image_tag(@characters.image) %>
+  
+app/views/characters/show.html.erb:2:in `_app_views_characters_show_html_erb__1035216250502083886_70302617974720'
+Started GET "/characters/49" for ::1 at 2020-01-15 14:42:31 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    1: <h2>Placeholder</h2>
+    2: <%= cl_image_tag(@characters.image) %>
+  
+app/views/characters/show.html.erb:2:in `_app_views_characters_show_html_erb__1035216250502083886_70302564265960'
+Started GET "/characters/49" for ::1 at 2020-01-15 14:44:32 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:28
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 193ms (Views: 54.4ms | ActiveRecord: 37.7ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 14:44:36 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (1.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 72ms (Views: 34.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/characters/49" for ::1 at 2020-01-15 14:44:40 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:28
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 56ms (Views: 42.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/users/28" for ::1 at 2020-01-15 14:44:55 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 53ms (Views: 39.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/characters/49" for ::1 at 2020-01-15 14:44:57 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:28
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 47ms (Views: 35.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 14:44:59 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 44ms (Views: 32.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 14:45:39 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 169ms (Views: 105.5ms | ActiveRecord: 29.7ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 14:45:41 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 47ms (Views: 40.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/characters/new" for ::1 at 2020-01-15 14:45:44 +1100
+Processing by CharactersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 40ms (Views: 35.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/characters" for ::1 at 2020-01-15 14:45:59 +1100
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tYADUGsUCVuLOq/liP/x+GMoVYjF/f+taGwIwfy/8Z1hUhF4kxxbYI/E3PHEDtlmrxHwXHZczCXfseLThWebiw==", "character"=>{"name"=>"Oryx", "server"=>"Arugal", "spec"=>"Warrior", "subspec"=>"Fury"}, "file"=>#<ActionDispatch::Http::UploadedFile:0x007fe136a362f8 @tempfile=#<Tempfile:/var/folders/yy/pvfchxx570jfsjsccfjsf8wh0000gp/T/RackMultipart20200115-38720-qnpu1n.jpg>, @original_filename="xB8B_toxUQCJHgBdioyLCMUJ0Zuv_3osLg8x6c1kx8c.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"xB8B_toxUQCJHgBdioyLCMUJ0Zuv_3osLg8x6c1kx8c.jpg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Add Character"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:12
+  [1m[36mCharacter Create (0.7ms)[0m  [1m[32mINSERT INTO "characters" ("name", "server", "spec", "subspec", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Oryx"], ["server", "Arugal"], ["spec", "Warrior"], ["subspec", "Fury"], ["created_at", "2020-01-15 03:45:59.414964"], ["updated_at", "2020-01-15 03:45:59.414964"], ["user_id", 28]]
+  ↳ app/controllers/characters_controller.rb:12
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:12
+Redirected to http://localhost:3000/users/28
+Completed 302 Found in 11ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/users/28" for ::1 at 2020-01-15 14:45:59 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 39ms (Views: 31.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/characters/50" for ::1 at 2020-01-15 14:46:00 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:28
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 42ms (Views: 32.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/characters/50" for ::1 at 2020-01-15 14:47:25 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:28
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 47ms (Views: 38.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 14:47:27 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 38ms (Views: 31.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/characters/new" for ::1 at 2020-01-15 14:47:28 +1100
+Processing by CharactersController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/Users/yanni/sei/projects/yumcha/app/views/characters/new.html.erb:29: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/characters/new.html.erb:29: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/characters" for ::1 at 2020-01-15 14:47:53 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 49ms (Views: 41.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/characters/new" for ::1 at 2020-01-15 14:47:54 +1100
+Processing by CharactersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/Users/yanni/sei/projects/yumcha/app/views/characters/new.html.erb:28: syntax error, unexpected keyword_end
+ze;@output_buffer.append=( end );
+                              ^
+/Users/yanni/sei/projects/yumcha/app/views/characters/new.html.erb:31: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/yanni/sei/projects/yumcha/app/views/characters/new.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/characters/new.html.erb:28: syntax error, unexpected keyword_end
+app/views/characters/new.html.erb:31: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/characters/new.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/characters/new" for ::1 at 2020-01-15 14:48:05 +1100
+Processing by CharactersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/Users/yanni/sei/projects/yumcha/app/views/characters/new.html.erb:27: syntax error, unexpected keyword_end
+ze;@output_buffer.append=( end );
+                              ^
+/Users/yanni/sei/projects/yumcha/app/views/characters/new.html.erb:30: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/yanni/sei/projects/yumcha/app/views/characters/new.html.erb:32: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/characters/new.html.erb:27: syntax error, unexpected keyword_end
+app/views/characters/new.html.erb:30: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/characters/new.html.erb:32: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/characters/new" for ::1 at 2020-01-15 14:48:10 +1100
+Processing by CharactersController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/Users/yanni/sei/projects/yumcha/app/views/characters/new.html.erb:27: syntax error, unexpected keyword_end
+ze;@output_buffer.append=( end );
+                              ^
+/Users/yanni/sei/projects/yumcha/app/views/characters/new.html.erb:30: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/yanni/sei/projects/yumcha/app/views/characters/new.html.erb:32: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/characters/new.html.erb:27: syntax error, unexpected keyword_end
+app/views/characters/new.html.erb:30: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/characters/new.html.erb:32: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/characters/new" for ::1 at 2020-01-15 14:48:14 +1100
+Processing by CharactersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 50ms (Views: 42.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 14:49:05 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 64ms (Views: 56.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/characters/48" for ::1 at 2020-01-15 14:49:07 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (1.7ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:28
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 62ms (Views: 51.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 14:49:09 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 47ms (Views: 40.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/characters/49" for ::1 at 2020-01-15 14:49:10 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:28
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 37ms (Views: 31.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 14:49:11 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 38ms (Views: 31.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/characters/50" for ::1 at 2020-01-15 14:49:11 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:28
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 41ms (Views: 31.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 14:49:12 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 44ms (Views: 35.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/characters/48" for ::1 at 2020-01-15 14:49:13 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:28
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 44ms (Views: 37.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 14:49:23 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 52ms (Views: 44.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/characters/48" for ::1 at 2020-01-15 14:49:24 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:28
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 40ms (Views: 34.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 14:49:25 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 40ms (Views: 31.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/characters/49" for ::1 at 2020-01-15 14:49:26 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:28
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 40ms (Views: 33.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/characters/49" for ::1 at 2020-01-15 14:51:20 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:28
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 47ms (Views: 37.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 14:51:21 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 39ms (Views: 32.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/characters/50" for ::1 at 2020-01-15 14:51:22 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:28
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 37ms (Views: 30.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 14:54:08 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (1.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 114ms (Views: 63.9ms | ActiveRecord: 21.9ms)
+
+
+Started GET "/characters/48" for ::1 at 2020-01-15 14:54:10 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:31
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 27.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 14:54:11 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 34ms (Views: 26.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/characters/new" for ::1 at 2020-01-15 14:54:13 +1100
+Processing by CharactersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 37ms (Views: 30.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/characters" for ::1 at 2020-01-15 14:54:25 +1100
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lj1v+izcQaGCuyy3XtOiNMc2bWqmPvczocCWzBJ+huVC733S1NQTmoZFX6MSIoqqCw/IvhWfxLsWHXzea6bs8w==", "character"=>{"name"=>"Oryx", "server"=>"Arugal", "spec"=>"Warrior", "subspec"=>"Feral"}, "file"=>#<ActionDispatch::Http::UploadedFile:0x007fe12e03d038 @tempfile=#<Tempfile:/var/folders/yy/pvfchxx570jfsjsccfjsf8wh0000gp/T/RackMultipart20200115-38720-14aac47.jpg>, @original_filename="xB8B_toxUQCJHgBdioyLCMUJ0Zuv_3osLg8x6c1kx8c.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"xB8B_toxUQCJHgBdioyLCMUJ0Zuv_3osLg8x6c1kx8c.jpg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Add Character"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:12
+  [1m[36mCharacter Create (0.8ms)[0m  [1m[32mINSERT INTO "characters" ("name", "server", "spec", "subspec", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Oryx"], ["server", "Arugal"], ["spec", "Warrior"], ["subspec", "Feral"], ["created_at", "2020-01-15 03:54:25.101151"], ["updated_at", "2020-01-15 03:54:25.101151"], ["user_id", 28]]
+  ↳ app/controllers/characters_controller.rb:12
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:12
+Completed 500 Internal Server Error in 71750ms (ActiveRecord: 3.1ms)
+
+
+  
+NameError (undefined local variable or method `pet' for #<CharactersController:0x007fe12da54f90>):
+  
+app/controllers/characters_controller.rb:16:in `create'
+Started POST "/characters" for ::1 at 2020-01-15 14:56:03 +1100
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lj1v+izcQaGCuyy3XtOiNMc2bWqmPvczocCWzBJ+huVC733S1NQTmoZFX6MSIoqqCw/IvhWfxLsWHXzea6bs8w==", "character"=>{"name"=>"Oryx", "server"=>"Arugal", "spec"=>"Warrior", "subspec"=>"Feral"}, "file"=>#<ActionDispatch::Http::UploadedFile:0x007fe133384098 @tempfile=#<Tempfile:/var/folders/yy/pvfchxx570jfsjsccfjsf8wh0000gp/T/RackMultipart20200115-38720-eskyw1.jpg>, @original_filename="xB8B_toxUQCJHgBdioyLCMUJ0Zuv_3osLg8x6c1kx8c.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"xB8B_toxUQCJHgBdioyLCMUJ0Zuv_3osLg8x6c1kx8c.jpg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Add Character"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (5.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:12
+  [1m[36mCharacter Create (0.9ms)[0m  [1m[32mINSERT INTO "characters" ("name", "server", "spec", "subspec", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Oryx"], ["server", "Arugal"], ["spec", "Warrior"], ["subspec", "Feral"], ["created_at", "2020-01-15 03:56:03.152985"], ["updated_at", "2020-01-15 03:56:03.152985"], ["user_id", 28]]
+  ↳ app/controllers/characters_controller.rb:12
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:12
+Completed 500 Internal Server Error in 70916ms (ActiveRecord: 22.5ms)
+
+
+  
+NameError (undefined local variable or method `character' for #<CharactersController:0x007fe133376600>
+Did you mean?  @character):
+  
+app/controllers/characters_controller.rb:16:in `create'
+Started POST "/characters" for ::1 at 2020-01-15 14:58:05 +1100
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lj1v+izcQaGCuyy3XtOiNMc2bWqmPvczocCWzBJ+huVC733S1NQTmoZFX6MSIoqqCw/IvhWfxLsWHXzea6bs8w==", "character"=>{"name"=>"Oryx", "server"=>"Arugal", "spec"=>"Warrior", "subspec"=>"Feral"}, "file"=>#<ActionDispatch::Http::UploadedFile:0x007fe12f37c1f8 @tempfile=#<Tempfile:/var/folders/yy/pvfchxx570jfsjsccfjsf8wh0000gp/T/RackMultipart20200115-38720-xt8nnr.jpg>, @original_filename="xB8B_toxUQCJHgBdioyLCMUJ0Zuv_3osLg8x6c1kx8c.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"xB8B_toxUQCJHgBdioyLCMUJ0Zuv_3osLg8x6c1kx8c.jpg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Add Character"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:12
+  [1m[36mCharacter Create (2.5ms)[0m  [1m[32mINSERT INTO "characters" ("name", "server", "spec", "subspec", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Oryx"], ["server", "Arugal"], ["spec", "Warrior"], ["subspec", "Feral"], ["created_at", "2020-01-15 03:58:06.037780"], ["updated_at", "2020-01-15 03:58:06.037780"], ["user_id", 28]]
+  ↳ app/controllers/characters_controller.rb:12
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:12
+Completed 500 Internal Server Error in 273ms (ActiveRecord: 22.0ms)
+
+
+  
+NameError (undefined local variable or method `character_params' for #<CharactersController:0x007fe12f37e7c8>
+Did you mean?  character_path):
+  
+app/controllers/characters_controller.rb:14:in `create'
+Started POST "/characters" for ::1 at 2020-01-15 14:59:15 +1100
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lj1v+izcQaGCuyy3XtOiNMc2bWqmPvczocCWzBJ+huVC733S1NQTmoZFX6MSIoqqCw/IvhWfxLsWHXzea6bs8w==", "character"=>{"name"=>"Oryx", "server"=>"Arugal", "spec"=>"Warrior", "subspec"=>"Feral"}, "file"=>#<ActionDispatch::Http::UploadedFile:0x007fe135198610 @tempfile=#<Tempfile:/var/folders/yy/pvfchxx570jfsjsccfjsf8wh0000gp/T/RackMultipart20200115-38720-1ay8018.jpg>, @original_filename="xB8B_toxUQCJHgBdioyLCMUJ0Zuv_3osLg8x6c1kx8c.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"xB8B_toxUQCJHgBdioyLCMUJ0Zuv_3osLg8x6c1kx8c.jpg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Add Character"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:12
+  [1m[36mCharacter Create (1.8ms)[0m  [1m[32mINSERT INTO "characters" ("name", "server", "spec", "subspec", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Oryx"], ["server", "Arugal"], ["spec", "Warrior"], ["subspec", "Feral"], ["created_at", "2020-01-15 03:59:15.222488"], ["updated_at", "2020-01-15 03:59:15.222488"], ["user_id", 28]]
+  ↳ app/controllers/characters_controller.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:12
+Unpermitted parameters: :server, :spec, :subspec
+Started GET "/characters/50" for ::1 at 2020-01-15 14:59:31 +1100
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:20
+  [1m[36mCharacter Create (8.0ms)[0m  [1m[32mINSERT INTO "characters" ("name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Oryx"], ["image", "r3domxhzheipp0tsmenk"], ["created_at", "2020-01-15 04:00:30.417173"], ["updated_at", "2020-01-15 04:00:30.417173"]]
+  ↳ app/controllers/characters_controller.rb:20
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:20
+Redirected to http://localhost:3000/users/28
+Completed 302 Found in 75309ms (ActiveRecord: 35.6ms)
+
+
+Started GET "/characters/49" for ::1 at 2020-01-15 15:00:30 +1100
+Started GET "/characters" for ::1 at 2020-01-15 15:00:30 +1100
+Processing by CharactersController#show as HTML
+Started GET "/characters/49" for ::1 at 2020-01-15 15:00:30 +1100
+  Parameters: {"id"=>"50"}
+Processing by CharactersController#index as HTML
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"49"}
+  Rendering characters/index.html.erb within layouts/application
+  Rendered characters/index.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 44.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <%= link_to 'Add Character', new_character_path %>
+    2: <% @character.each do |character| %>
+    3:   <li>
+    4:     <%= link_to character.name, character %>
+    5:   </li>
+  
+app/views/characters/index.html.erb:2:in `_app_views_characters_index_html_erb__1365281747834726330_70302626467440'
+  [1m[36mUser Load (102.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (2.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:33
+  [1m[36mCharacter Load (105.9ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  [1m[36mCharacter Load (51.7ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:33
+  ↳ app/controllers/characters_controller.rb:33
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (0.6ms)
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (0.3ms)
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 307ms (Views: 91.6ms | ActiveRecord: 156.3ms)
+
+
+Completed 200 OK in 385ms (Views: 168.9ms | ActiveRecord: 43.3ms)
+
+
+Completed 200 OK in 442ms (Views: 141.1ms | ActiveRecord: 140.4ms)
+
+
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 28]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "yanni"], ["email", "yanni@test.com"], ["created_at", "2020-01-15 04:01:15.154862"], ["updated_at", "2020-01-15 04:01:15.154862"], ["password_digest", "$2a$12$w9nG/.GjYoC18XdO2iWU.uDzIdJDg7rMjnV/LBIb8q3yjOne4I48y"], ["admin", true]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ db/seeds.rb:7
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCharacter Destroy (0.6ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 48]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCharacter Destroy (0.4ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 49]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCharacter Destroy (0.3ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 50]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCharacter Destroy (0.4ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 51]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCharacter Destroy (0.3ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 52]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCharacter Destroy (0.4ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 53]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCharacter Destroy (0.6ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 54]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCharacter Destroy (0.6ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 55]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCharacter Create (0.7ms)[0m  [1m[32mINSERT INTO "characters" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Woahmen"], ["created_at", "2020-01-15 04:01:15.211603"], ["updated_at", "2020-01-15 04:01:15.211603"], ["user_id", 29]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "characters"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ db/seeds.rb:18
+Started GET "/" for ::1 at 2020-01-15 15:01:19 +1100
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:3
+  Rendered posts/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 360ms (Views: 325.4ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/" for ::1 at 2020-01-15 15:01:21 +1100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:3
+  Rendered posts/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 52ms (Views: 43.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for ::1 at 2020-01-15 15:01:25 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 47ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-01-15 15:01:29 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PJVmEzKGJgs83INjGmJKndHpDF4FPdU1XuSDy6fmw2noR3Q7yo50MDgi8HdWk2IDHdCpirac5r3pOWnZ3j6pfw==", "email"=>"yanni@test.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:8
+Redirected to http://localhost:3000/users/29
+Completed 302 Found in 404ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/users/29" for ::1 at 2020-01-15 15:01:29 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 78ms (Views: 50.0ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/characters/new" for ::1 at 2020-01-15 15:01:31 +1100
+Processing by CharactersController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (290.0ms)
+Completed 200 OK in 368ms (Views: 361.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/characters" for ::1 at 2020-01-15 15:01:42 +1100
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dvqtGIbAEhnMiq2MaPi4zP4cPthujr2bwBcXzknQE86iKL8wfshAIsh03pgkCZBSMiWbDN0vjhN3yv3cMAh52A==", "character"=>{"name"=>"Oryx", "server"=>"Arugal", "spec"=>"Warrior", "subspec"=>"Fury"}, "file"=>#<ActionDispatch::Http::UploadedFile:0x007ff583ae8e60 @tempfile=#<Tempfile:/var/folders/yy/pvfchxx570jfsjsccfjsf8wh0000gp/T/RackMultipart20200115-39142-1m2ekz4.jpg>, @original_filename="xB8B_toxUQCJHgBdioyLCMUJ0Zuv_3osLg8x6c1kx8c.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"xB8B_toxUQCJHgBdioyLCMUJ0Zuv_3osLg8x6c1kx8c.jpg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Add Character"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:12
+  [1m[36mCharacter Create (1.8ms)[0m  [1m[32mINSERT INTO "characters" ("name", "server", "spec", "subspec", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Oryx"], ["server", "Arugal"], ["spec", "Warrior"], ["subspec", "Fury"], ["created_at", "2020-01-15 04:01:42.652017"], ["updated_at", "2020-01-15 04:01:42.652017"], ["user_id", 29]]
+  ↳ app/controllers/characters_controller.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:12
+Unpermitted parameters: :server, :spec, :subspec
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:20
+  [1m[36mCharacter Create (1.2ms)[0m  [1m[32mINSERT INTO "characters" ("name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Oryx"], ["image", "wa0zsbunnxlr0bmfvyml"], ["created_at", "2020-01-15 04:02:57.828377"], ["updated_at", "2020-01-15 04:02:57.828377"]]
+  ↳ app/controllers/characters_controller.rb:20
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:20
+Redirected to http://localhost:3000/users/29
+Completed 302 Found in 75197ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/users/29" for ::1 at 2020-01-15 15:02:57 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCharacter Load (1.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 43ms (Views: 32.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/characters/57" for ::1 at 2020-01-15 15:03:00 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (1.7ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:33
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 53ms (Views: 39.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 15:03:42 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  Rendered characters/index.html.erb within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 14.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <%= link_to 'Add Character', new_character_path %>
+    2: <% @character.each do |character| %>
+    3:   <li>
+    4:     <%= link_to character.name, character %>
+    5:   </li>
+  
+app/views/characters/index.html.erb:2:in `_app_views_characters_index_html_erb___3015349724247199849_70346174118660'
+Started GET "/characters" for ::1 at 2020-01-15 15:03:48 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  Rendered characters/index.html.erb within layouts/application (12.4ms)
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 15.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <%= link_to 'Add Character', new_character_path %>
+    2: <% @character.each do |character| %>
+    3:   <li>
+    4:     <%= link_to character.name, character %>
+    5:   </li>
+  
+app/views/characters/index.html.erb:2:in `_app_views_characters_index_html_erb___3015349724247199849_70346208281440'
+Started GET "/characters" for ::1 at 2020-01-15 15:03:51 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  Rendered characters/index.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <%= link_to 'Add Character', new_character_path %>
+    2: <% @character.each do |character| %>
+    3:   <li>
+    4:     <%= link_to character.name, character %>
+    5:   </li>
+  
+app/views/characters/index.html.erb:2:in `_app_views_characters_index_html_erb___3015349724247199849_70346229238580'
+Started GET "/characters" for ::1 at 2020-01-15 15:04:39 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  Rendered characters/index.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <%= link_to 'Add Character', new_character_path %>
+    2: <% @character.each do |character| %>
+    3:   <li>
+    4:     <%= link_to character.name, character %>
+    5:   </li>
+  
+app/views/characters/index.html.erb:2:in `_app_views_characters_index_html_erb___3015349724247199849_70346181281320'
+Started GET "/characters" for ::1 at 2020-01-15 15:05:08 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  Rendered characters/index.html.erb within layouts/application (7.9ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <%= link_to 'Add Character', new_character_path %>
+    2: <% @characters.each do |character| %>
+    3:   <li>
+    4:     <%= link_to character.name, character %>
+    5:   </li>
+  
+app/views/characters/index.html.erb:2:in `_app_views_characters_index_html_erb___3015349724247199849_70346220927660'
+Started GET "/characters" for ::1 at 2020-01-15 15:05:14 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  Rendered characters/index.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <%= link_to 'Add Character', new_character_path %>
+    2: <% @character.each do |character| %>
+    3:   <li>
+    4:     <%= link_to character.name, character %>
+    5:   </li>
+  
+app/views/characters/index.html.erb:2:in `_app_views_characters_index_html_erb___3015349724247199849_70346174446840'
+Started GET "/characters" for ::1 at 2020-01-15 15:05:42 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  Rendered characters/index.html.erb within layouts/application (8.3ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <%= link_to 'Add Character', new_character_path %>
+    2: <% @character.each do |character| %>
+    3:   <li>
+    4:     <%= link_to character.name, character %>
+    5:   </li>
+  
+app/views/characters/index.html.erb:2:in `_app_views_characters_index_html_erb___3015349724247199849_70346222019200'
+Started GET "/characters" for ::1 at 2020-01-15 15:05:45 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 123ms (Views: 56.7ms | ActiveRecord: 25.4ms)
+
+
+Started GET "/characters/57" for ::1 at 2020-01-15 15:05:48 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    1: <h2>Placeholder</h2>
+    2: <%= cl_image_tag(@character.image) %>
+  
+app/views/characters/show.html.erb:2:in `_app_views_characters_show_html_erb__3192533241902208293_70346225440960'
+Started GET "/characters/57" for ::1 at 2020-01-15 15:15:27 +1100
+  
+SyntaxError (/Users/yanni/sei/projects/yumcha/app/controllers/characters_controller.rb:7: syntax error, unexpected tXSTRING_BEG, expecting ']'
+r = Character.find params[:id`]
+                              ^
+/Users/yanni/sei/projects/yumcha/app/controllers/characters_controller.rb:7: unterminated string meets end of file):
+  
+app/controllers/characters_controller.rb:7: syntax error, unexpected tXSTRING_BEG, expecting ']'
+app/controllers/characters_controller.rb:7: unterminated string meets end of file
+Started GET "/characters/57" for ::1 at 2020-01-15 15:15:31 +1100
+  
+SyntaxError (/Users/yanni/sei/projects/yumcha/app/controllers/characters_controller.rb:7: syntax error, unexpected tXSTRING_BEG, expecting ']'
+r = Character.find params[:id`]
+                              ^
+/Users/yanni/sei/projects/yumcha/app/controllers/characters_controller.rb:7: unterminated string meets end of file):
+  
+app/controllers/characters_controller.rb:7: syntax error, unexpected tXSTRING_BEG, expecting ']'
+app/controllers/characters_controller.rb:7: unterminated string meets end of file
+Started GET "/characters/57" for ::1 at 2020-01-15 15:15:55 +1100
+  
+SyntaxError (/Users/yanni/sei/projects/yumcha/app/controllers/characters_controller.rb:7: syntax error, unexpected tXSTRING_BEG, expecting ']'
+r = Character.find params[:id`]
+                              ^
+/Users/yanni/sei/projects/yumcha/app/controllers/characters_controller.rb:7: unterminated string meets end of file):
+  
+app/controllers/characters_controller.rb:7: syntax error, unexpected tXSTRING_BEG, expecting ']'
+app/controllers/characters_controller.rb:7: unterminated string meets end of file
+Started GET "/characters/57" for ::1 at 2020-01-15 15:16:23 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:7
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 142ms (Views: 57.9ms | ActiveRecord: 25.3ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 15:16:24 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 50ms (Views: 42.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/characters/56" for ::1 at 2020-01-15 15:16:25 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"56"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:7
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 38ms (Views: 30.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 15:16:26 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 35ms (Views: 29.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/characters/57" for ::1 at 2020-01-15 15:16:28 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:7
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 31.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 15:16:29 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 33ms (Views: 26.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/characters/new" for ::1 at 2020-01-15 15:16:54 +1100
+Processing by CharactersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 61ms (Views: 52.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/characters" for ::1 at 2020-01-15 15:17:10 +1100
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CtgpVpjqaFLMH+m2k9lKXn7s6RAldhuphfZLqKyOZJfeCjt+YOI6acjhmqLfKGLAstVMxJbXKCEyK6G61VYOgQ==", "character"=>{"name"=>"Josh", "server"=>"asdf", "spec"=>"asdf", "subspec"=>"asdf"}, "file"=>#<ActionDispatch::Http::UploadedFile:0x007ff57e7bcc28 @tempfile=#<Tempfile:/var/folders/yy/pvfchxx570jfsjsccfjsf8wh0000gp/T/RackMultipart20200115-39142-14k888.png>, @original_filename="Screen Shot 2020-01-13 at 1.28.53 pm.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"Screen Shot 2020-01-13 at 1.28.53 pm.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Add Character"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (undefined local variable or method `character_params' for #<CharactersController:0x007ff57e7be500>
+Did you mean?  character_path):
+  
+app/controllers/characters_controller.rb:15:in `create'
+Started POST "/characters" for ::1 at 2020-01-15 15:19:01 +1100
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CtgpVpjqaFLMH+m2k9lKXn7s6RAldhuphfZLqKyOZJfeCjt+YOI6acjhmqLfKGLAstVMxJbXKCEyK6G61VYOgQ==", "character"=>{"name"=>"Josh", "server"=>"asdf", "spec"=>"asdf", "subspec"=>"asdf"}, "file"=>#<ActionDispatch::Http::UploadedFile:0x007ff58317f1d0 @tempfile=#<Tempfile:/var/folders/yy/pvfchxx570jfsjsccfjsf8wh0000gp/T/RackMultipart20200115-39142-1qdrerh.png>, @original_filename="Screen Shot 2020-01-13 at 1.28.53 pm.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"Screen Shot 2020-01-13 at 1.28.53 pm.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Add Character"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Unpermitted parameters: :server, :spec, :subspec
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:21
+  [1m[36mCharacter Create (1.0ms)[0m  [1m[32mINSERT INTO "characters" ("name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Josh"], ["image", "zttpa6vvdvq9ilqhxbid"], ["created_at", "2020-01-15 04:19:04.919160"], ["updated_at", "2020-01-15 04:19:04.919160"]]
+  ↳ app/controllers/characters_controller.rb:21
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:23
+  [1m[36mCharacter Create (0.6ms)[0m  [1m[32mINSERT INTO "characters" ("name", "server", "spec", "subspec", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Josh"], ["server", "asdf"], ["spec", "asdf"], ["subspec", "asdf"], ["created_at", "2020-01-15 04:19:04.930240"], ["updated_at", "2020-01-15 04:19:04.930240"], ["user_id", 29]]
+  ↳ app/controllers/characters_controller.rb:23
+  [1m[35m (18.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:23
+Redirected to http://localhost:3000/users/29
+Completed 302 Found in 3207ms (ActiveRecord: 48.9ms)
+
+
+Started GET "/users/29" for ::1 at 2020-01-15 15:19:04 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 49ms (Views: 39.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/characters/57" for ::1 at 2020-01-15 15:19:06 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (1.6ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:7
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 46ms (Views: 35.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/characters/60" for ::1 at 2020-01-15 15:19:09 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"60"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:7
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 43ms (Views: 35.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/characters/60" for ::1 at 2020-01-15 15:19:29 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"60"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:7
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 64ms (Views: 54.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/characters/60" for ::1 at 2020-01-15 15:19:35 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"60"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:7
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 60ms (Views: 51.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/characters/60" for ::1 at 2020-01-15 15:19:40 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"60"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:7
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 59ms (Views: 48.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/characters/60" for ::1 at 2020-01-15 15:20:57 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"60"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:7
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 114ms (Views: 37.5ms | ActiveRecord: 20.4ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 15:21:00 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  Rendered characters/index.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <%= link_to 'Add Character', new_character_path %>
+    2: <% @character.each do |character| %>
+    3:   <li>
+    4:     <%= link_to character.name, character %>
+    5:   </li>
+  
+app/views/characters/index.html.erb:2:in `_app_views_characters_index_html_erb___3015349724247199849_70346210543580'
+Started GET "/characters" for ::1 at 2020-01-15 15:21:25 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 50ms (Views: 41.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/characters/60" for ::1 at 2020-01-15 15:21:26 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"60"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:7
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 31.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 15:21:29 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 35ms (Views: 29.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/characters/56" for ::1 at 2020-01-15 15:21:30 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"56"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:7
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 32ms (Views: 25.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/characters/56" for ::1 at 2020-01-15 15:21:35 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"56"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:7
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 47ms (Views: 38.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 15:21:36 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  Rendered characters/index.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <%= link_to 'Add Character', new_character_path %>
+    2: <% @character.each do |character| %>
+    3:   <li>
+    4:     <%= link_to character.name, character %>
+    5:   </li>
+  
+app/views/characters/index.html.erb:2:in `_app_views_characters_index_html_erb___3015349724247199849_70346222211900'
+Started GET "/characters" for ::1 at 2020-01-15 15:21:40 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 45ms (Views: 37.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/characters/60" for ::1 at 2020-01-15 15:21:42 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"60"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:7
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 49ms (Views: 33.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 15:21:43 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 36ms (Views: 29.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 15:22:19 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 38ms (Views: 30.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/characters" for ::1 at 2020-01-15 15:22:26 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 47ms (Views: 35.6ms | ActiveRecord: 1.7ms)
+
+
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:1
+Started GET "/characters" for ::1 at 2020-01-15 15:22:28 +1100
+Processing by CharactersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 29]]
+  ↳ db/seeds.rb:1
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 55ms (Views: 45.8ms | ActiveRecord: 1.3ms)
+
+
+  [1m[35m (6.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "yanni"], ["email", "yanni@test.com"], ["created_at", "2020-01-15 04:22:28.751227"], ["updated_at", "2020-01-15 04:22:28.751227"], ["password_digest", "$2a$12$P.3QID3Crf4pQ.OweQcBXeosm9JOTB9aC01PSa87ShqCqP5c5Regy"], ["admin", true]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ db/seeds.rb:7
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCharacter Destroy (0.5ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 58]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCharacter Destroy (0.4ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 59]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCharacter Destroy (0.4ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 60]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCharacter Destroy (0.4ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 56]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCharacter Destroy (0.4ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 57]]
+  ↳ db/seeds.rb:10
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+Started GET "/characters" for ::1 at 2020-01-15 15:22:28 +1100
+  [1m[36mCharacter Create (2.9ms)[0m  [1m[32mINSERT INTO "characters" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Woahmen"], ["created_at", "2020-01-15 04:22:28.823994"], ["updated_at", "2020-01-15 04:22:28.823994"], ["user_id", 30]]
+  ↳ db/seeds.rb:14
+Processing by CharactersController#index as HTML
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "characters"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ db/seeds.rb:18
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" IS NULL[0m
+  ↳ app/views/characters/index.html.erb:2
+  Rendered characters/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 43ms (Views: 36.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for ::1 at 2020-01-15 15:22:30 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 42ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-01-15 15:22:33 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4rhEycR24OxWjBgoYaDk1yHSJWiMU0XZ0vY6x9tiD9M2albhPH6y11JyazwtUcxJ7euAvD/ydlFlK9DVorplxQ==", "email"=>"yanni@test.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:8
+Redirected to http://localhost:3000/users/30
+Completed 302 Found in 395ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/users/30" for ::1 at 2020-01-15 15:22:34 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 36ms (Views: 29.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/characters/61" for ::1 at 2020-01-15 15:22:35 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"61"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (1.6ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:7
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 41ms (Views: 30.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/30" for ::1 at 2020-01-15 15:22:59 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 53ms (Views: 38.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/characters/new" for ::1 at 2020-01-15 15:23:00 +1100
+Processing by CharactersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 55ms (Views: 41.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/characters" for ::1 at 2020-01-15 15:23:11 +1100
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7T+qvJdTPZx8LusQYfOdI4vr/cCZB2Ei5cTkoU6ygZI57biUb1tvp3jQmAQtArW9R9JYFCqmUqpSGQ6zN2rrhA==", "character"=>{"name"=>"Oryx", "server"=>"Arugal", "spec"=>"Warrior", "subspec"=>"Fury"}, "file"=>#<ActionDispatch::Http::UploadedFile:0x007ff57e7753f0 @tempfile=#<Tempfile:/var/folders/yy/pvfchxx570jfsjsccfjsf8wh0000gp/T/RackMultipart20200115-39142-11wr854.png>, @original_filename="Screen Shot 2020-01-13 at 1.28.53 pm.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"Screen Shot 2020-01-13 at 1.28.53 pm.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Add Character"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Unpermitted parameters: :server, :spec, :subspec
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:21
+  [1m[36mCharacter Create (1.1ms)[0m  [1m[32mINSERT INTO "characters" ("name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Oryx"], ["image", "a6nvvvii1tzr9c8yhjgz"], ["created_at", "2020-01-15 04:23:15.344310"], ["updated_at", "2020-01-15 04:23:15.344310"]]
+  ↳ app/controllers/characters_controller.rb:21
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:21
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:23
+  [1m[36mCharacter Create (0.7ms)[0m  [1m[32mINSERT INTO "characters" ("name", "server", "spec", "subspec", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Oryx"], ["server", "Arugal"], ["spec", "Warrior"], ["subspec", "Fury"], ["created_at", "2020-01-15 04:23:15.352488"], ["updated_at", "2020-01-15 04:23:15.352488"], ["user_id", 30]]
+  ↳ app/controllers/characters_controller.rb:23
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:23
+Redirected to http://localhost:3000/users/30
+Completed 302 Found in 3365ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/users/30" for ::1 at 2020-01-15 15:23:15 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 51ms (Views: 41.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/characters/63" for ::1 at 2020-01-15 15:23:17 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"63"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (1.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:7
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    1: <h2>Placeholder</h2>
+    2: <%= cl_image_tag(@characters.image) %>
+  
+app/views/characters/show.html.erb:2:in `_app_views_characters_show_html_erb__3192533241902208293_70346225977780'
+Started GET "/characters/63" for ::1 at 2020-01-15 15:23:25 +1100
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"63"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:7
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 59ms (Views: 49.8ms | ActiveRecord: 1.3ms)
+
+

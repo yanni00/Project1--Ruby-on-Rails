@@ -1,6 +1,6 @@
 <%= link_to 'Add Character', new_character_path %>
-<% @character.each do |character| %>
+<% @characters.each do |character| %>
   <li>
-    <%= character.name %>
+    <%= link_to character.name, character %>
   </li>
 <% end %>
