@@ -12,27 +12,29 @@ class CharactersController < ApplicationController
   end
 
   def create
+
     character = Character.new character_params
+
+    @character = Character.create name: params[:character][:name], server: params[:character][:server], spec: params[:character][:spec], subspec: params[:character][:subspec], image: params[:character][:image], user: @current_user
+
 
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
       character.image = req["public_id"]
     end
 
-    @character = Character.create name: params[:character][:name], server: params[:character][:server], spec: params[:character][:spec], subspec: params[:character][:subspec], image: params[:character][:image], user: @current_user
-
-    # redirect_to character_path(character.id)
+    character.save
     redirect_to user_path(@current_user.id)
 
   end
 
   def edit
-    @pet = Pet.find params[:id]
+    @character = Character.find params[:id]
   end
 
 
   def update
-    pet = Pet.find params[:id]
+    character = Character.find params[:id]
   end
 
   def destroy
@@ -40,7 +42,6 @@ class CharactersController < ApplicationController
 
   private
     def character_params
-      params.require(:character).permit(:name)
+      params.require(:character).permit( :name, :server, :spec, :subspec, :image, :user)
     end
-
 end

@@ -1,19 +1,19 @@
 ---
 development:
-  cloud_name: yancloud
-  api_key: '768275223491796'
-  api_secret: a3Ma1n4asT2j5SsaeVpDJEWWv_Y
+  cloud_name: Rails.application.secrets.cloudinary_cloud_name
+  api_key: Rails.application.secrets.cloudinary_api_key
+  api_secret: Rails.application.secrets.cloudinary_api_secret
   enhance_image_tag: true
   static_file_support: false
 production:
-  cloud_name: yancloud
-  api_key: '768275223491796'
-  api_secret: a3Ma1n4asT2j5SsaeVpDJEWWv_Y
+  cloud_name: Rails.application.secrets.cloudinary_cloud_name
+  api_key: Rails.application.secrets.cloudinary_api_key
+  api_secret: Rails.application.secrets.cloudinary_api_secret
   enhance_image_tag: true
   static_file_support: true
 test:
-  cloud_name: yancloud
-  api_key: '768275223491796'
-  api_secret: a3Ma1n4asT2j5SsaeVpDJEWWv_Y
+  cloud_name: Rails.application.secrets.cloudinary_cloud_name
+  api_key: Rails.application.secrets.cloudinary_api_key
+  api_secret: Rails.application.secrets.cloudinary_api_secret
   enhance_image_tag: true
   static_file_support: false
