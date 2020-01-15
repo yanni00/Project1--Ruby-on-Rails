@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: yancloud
+  api_key: '768275223491796'
+  api_secret: a3Ma1n4asT2j5SsaeVpDJEWWv_Y
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: yancloud
+  api_key: '768275223491796'
+  api_secret: a3Ma1n4asT2j5SsaeVpDJEWWv_Y
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: yancloud
+  api_key: '768275223491796'
+  api_secret: a3Ma1n4asT2j5SsaeVpDJEWWv_Y
+  enhance_image_tag: true
+  static_file_support: false

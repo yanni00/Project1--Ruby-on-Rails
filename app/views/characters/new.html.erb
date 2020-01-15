@@ -1,7 +1,7 @@
 <h2>Create New Character</h2>
 
 
-<%= form_for @character do |f| %>
+<%= form_for @character, :html => {:multipart => true} do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -20,7 +20,7 @@
   <br>
 
   <%= f.label 'Character Icon' %>
-  <%= f.text_field :image %>
+  <%= f.cl_image_upload :image %>
   <br>
 
   <%= submit_tag 'Add Character' %>
