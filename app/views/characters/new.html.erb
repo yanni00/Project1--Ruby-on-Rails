@@ -3,23 +3,23 @@
 
 <%= form_for @character, :html => {:multipart => true} do |f| %>
 
-  <%= f.label :name %>
+  <%= f.label 'Name: ' %>
   <%= f.text_field :name %>
   <br>
 
-  <%= f.label :server %>
+  <%= f.label 'Server: ' %>
   <%= f.text_field :server %>
   <br>
 
-  <%= f.label 'Class' %>
+  <%= f.label 'Class: ' %>
   <%= f.text_field :spec %>
   <br>
 
-  <%= f.label 'Spec' %>
+  <%= f.label 'Spec: ' %>
   <%= f.text_field :subspec %>
   <br>
 
-  <%= f.label 'Character Icon' %>
+  <%= f.label 'Character Icon: ' %>
   <%= f.cl_image_upload :image %>
   <br>
 

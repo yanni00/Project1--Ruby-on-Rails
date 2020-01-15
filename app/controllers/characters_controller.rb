@@ -8,7 +8,6 @@ class CharactersController < ApplicationController
   end
 
   def new
-    @character = Character.new
   end
 
   def create
@@ -18,28 +17,29 @@ class CharactersController < ApplicationController
       req = Cloudinary::Uploader.upload(params[:file])
       character.image = req["public_id"]
     end
-    character.save
 
-    @character = Character.create name: params[:character][:name], server: params[:character][:server], spec: params[:character][:spec], subspec: params[:character][:subspec], user: @current_user
+    @character = Character.create name: params[:character][:name], server: params[:character][:server], spec: params[:character][:spec], subspec: params[:character][:subspec], image: params[:character][:image], user: @current_user
 
     # redirect_to character_path(character.id)
-
     redirect_to user_path(@current_user.id)
 
   end
 
-
+  def edit
+    @pet = Pet.find params[:id]
+  end
 
 
   def update
+    pet = Pet.find params[:id]
   end
 
   def destroy
   end
 
   private
-  def character_params
-    params.require(:character).permit(:name)
-  end
+    def character_params
+      params.require(:character).permit(:name)
+    end
 
 end
