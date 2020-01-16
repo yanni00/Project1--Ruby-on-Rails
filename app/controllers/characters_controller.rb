@@ -15,13 +15,15 @@ class CharactersController < ApplicationController
 
     character = Character.new character_params
 
-    @character = Character.create name: params[:character][:name], server: params[:character][:server], spec: params[:character][:spec], subspec: params[:character][:subspec], image: params[:character][:image], user: @current_user
+    # @character = Character.create name: params[:character][:name], server: params[:character][:server], spec: params[:character][:spec], subspec: params[:character][:subspec], image: params[:character][:image], user: @current_user
 
 
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
       character.image = req["public_id"]
     end
+
+    character.user_id = @current_user.id
 
     character.save
     redirect_to user_path(@current_user.id)
@@ -35,6 +37,9 @@ class CharactersController < ApplicationController
 
   def update
     character = Character.find params[:id]
+    character.update character_params
+
+    redirect_to characters_path(character.id)
   end
 
   def destroy
