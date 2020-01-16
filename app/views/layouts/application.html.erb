@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <title>YumCha</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %>
+    <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
   </head>
   <body>
-
     <!-- <h1>Yum Cha Guild Database</h1> -->
+    <div id="websiteName">
     <h1><%= link_to 'Yum Cha Guild Database', root_path %></h1>
+    </div>
+    <div id="main">
     <header>
       <nav>
         <% if @current_user.present? %>
@@ -22,23 +23,23 @@
           (Admin Level Account)
           <% end  %>
 
-          <h3><%= link_to 'Logout', login_path, method: 'delete' %> <%= link_to 'Forum', root_path %> <%= link_to 'Characters', characters_path %></h3>
+          <h3><%= link_to '-Logout', login_path, method: 'delete' %> <%= link_to '-Forum', root_path %> <%= link_to '-Characters', characters_path %></h3>
 
         <% else %>
-          <%= link_to 'Login', login_path %>
+          <%= link_to '-Login', login_path %>
            |
-          <%= link_to 'Sign Up', new_user_path %>
+          <%= link_to '-Sign Up', new_user_path %>
         <% end %>
       </nav>
       <hr>
     </header>
+  </div>
 
 
     <%= yield %>
-    <footer>
-      <hr>
+    <footer id='footer'>
 
-      <h4>"&copy;" Yum Cha Guild Charter</h4>
+      <p>"&copy;" Yum Cha Guild Charter</p>
     </footer>
   </body>
 </html>

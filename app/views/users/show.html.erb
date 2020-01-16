@@ -4,10 +4,10 @@
 <ul>
 
 <% @characters.each do |h| %>
-  <li><%= link_to h.name, character_path(h.id) %></li>
+  <h2><li><%= link_to h.name, character_path(h.id) %></li></h2>
   <% end %>
 
 </ul>
 
 
-<%= link_to 'Create a new Character', new_character_path %>
+<h3><%= link_to 'Create a new Character', new_character_path %></h3>

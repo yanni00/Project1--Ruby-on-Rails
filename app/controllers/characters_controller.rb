@@ -38,6 +38,9 @@ class CharactersController < ApplicationController
   def update
     character = Character.find params[:id]
     character.update character_params
+    character.user_id = @current_user.id
+
+    character.save
 
     redirect_to characters_path(character.id)
   end

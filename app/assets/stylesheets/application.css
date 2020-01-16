@@ -14,13 +14,48 @@
  *= require_self
  */
 
- body {
-   /* font-family: Solway; */
-   margin: 42px;
-   /* background-image: url("https://external-preview.redd.it/xB8B_toxUQCJHgBdioyLCMUJ0Zuv_3osLg8x6c1kx8c.jpg?auto=webp&s=e6725de7955c34ecfaffb185cd374cb4a5039e86"); */
-   object-fit: contain;
-   background-image: linear-gradient(90deg, #bdc3c7, #8ec1e3);;
+body {
+  font-family: Gelasio;
+  margin: 42px;
+  /* background-image: url("https://cdn.hipwallpaper.com/i/2/15/czjgpO.jpg"); */
+  object-fit: contain;
+  background-image: linear-gradient(90deg, #777b7e, #43799c);
+
  }
+
 h1 {
   /* font-family: Solway; */
+}
+a, a:active{ color: #ffbe00;
+text-decoration: none;
+}
+a:hover{ color: #e7b41e; }
+
+#header{
+  font-family
+}
+
+#main{
+
+}
+
+#footer{
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  background-color: lavender;
+  width: 100%;
+  margin-left: 0px;
+  background-image: url(https://cdn.hipwallpaper.com/i/13/80/OR2Qdl.png);
+}
+#websiteName{
+  float: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 50px;
+    color: #FFFFFF;
+    margin-right: 30vw;
+    font-size: 2em;
+    font-family: Orbitron;
+    font-weight: 700;
 }
