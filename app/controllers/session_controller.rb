@@ -3,31 +3,16 @@ class SessionController < ApplicationController
   end
 
   def create
-
-    # See if the email address entered actually exists in the 'users' table
     user = User.find_by email: params[:email]
-
-    # Did we find a user, and if we did, is the password corret?
     if user.present? && user.authenticate(  params[:password]  )
-      #successful login
-
-      # Get rails to create a new key in a special system variable
-      # called 'session'; this variable is remembered ACROSS REQUESTS!
-      #(This persistent memory across requests is implemented using browser cookies,
-      # which are stored on your harddrives)
       session[:user_id] = user.id
-
-      redirect_to user_path(user.id)   # go to show page(/users/ID or whatever)
-
+      redirect_to user_path(user.id)
 
     else
-      #failed login (wrong credentials)
       flash[:error] = 'Invalid email or password'
-      redirect_to login_path   # show the form again
+      redirect_to login_path
     end
-
-
-  end # create
+  end
 
   def destroy
     session[:user_id] = nil

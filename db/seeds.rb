@@ -11,7 +11,7 @@ Character.destroy_all
 
 puts "Creating characters"
 
-c1 = Character.create! name: "Woahmen", user: u1
+c1 = Character.create! name: "Woahmen", server: "Arugal", spec: "Warlock", subspec: "SM-Ruin", user: u1
 
 puts "#{Character.count} characters created"
 

@@ -15,9 +15,6 @@ class CharactersController < ApplicationController
 
     character = Character.new character_params
 
-    # @character = Character.create name: params[:character][:name], server: params[:character][:server], spec: params[:character][:spec], subspec: params[:character][:subspec], image: params[:character][:image], user: @current_user
-
-
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
       character.image = req["public_id"]

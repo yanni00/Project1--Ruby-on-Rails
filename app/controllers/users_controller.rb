@@ -1,64 +1,39 @@
 class UsersController < ApplicationController
 
-  # Certain pages are visible only to logged in users:
-  # before_action :check_if_logged_in, except: [ :new ]
   before_action :check_if_logged_in, except: [:new, :create]
-
-  # Lock down admin pages
   before_action :check_if_admin, only: [ :index ]
-
   def new
     @user = User.new
   end
 
   def create
-    @user = User.create user_params  # strong params
+    @user = User.create user_params
 
     if @user.persisted?
-      # account created successfully
-      session[:user_id] = @user.id  #log them in automatically
+      session[:user_id] = @user.id
       redirect_to user_path(@user.id)
     else
-      # There was an error, so show the signup for again
-      # BUT - we want the form to be prefilled, so let's
-      # not redirect to the login form, byt just render
-      # the 'new' form template again. This way, the template
-      # can see our @user variable from above, and prefill
-      # the form.
-
-      # Set up our flash variable with appropriate errors
-      # show on the template:
-
-      # NOPE! beacause of the rendering, instead of rediecting, the flash message will #live for ANOTHER page reload.
-      #Let's just use @user.errors in our template directly/
-      # flash[:errors] = @user.errors.full_messages # ActiveRecord has set these errors
-
       render :new
-
     end
-  end #Create
+  end
 
   def index
     @users = User.all
-  end #Index
+  end
 
   def show
-
-    # Show pages can ONLY be seen by logged-in users
     @user = User.find params[:id]
     @characters = Character.where :user => @current_user
-
-
-  end #Show
+  end
 
   def edit
-  end #Edit
+  end
 
   def update
-  end #Update
+  end
 
   def destroy
-  end #Destroy
+  end
 
   private
   def user_params
@@ -67,4 +42,4 @@ class UsersController < ApplicationController
 
   end
 
-end #UsersController
+end 
