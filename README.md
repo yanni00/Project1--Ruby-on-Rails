@@ -1,7 +1,7 @@
 # README
 # Project1--Ruby-on-Rails
 
-##Getting Started
+## Getting Started
 Go to https://github.com/yanni00/Project1--Ruby-on-Rails to download the github.
 Or alternatively go to https://yumcha.herokuapp.com/
 
