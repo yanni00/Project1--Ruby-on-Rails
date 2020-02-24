@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html>
-<div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <% if @current_user.present? %>
-    Welcome, <%= @current_user.name %>
-    <% if @current_user.admin? %>
-    (Admin Level Account)
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <% if @current_user.present? %>
+      Welcome, <%= @current_user.name %>
+      <% if @current_user.admin? %>
+      (Admin Level Account)
     <% end  %>
 
+    <h3><%= link_to '-About Us', about_path %>
     <h3><%= link_to '-Logout', login_path, method: 'delete' %></h3>
 
-  <% else %>
-    <%= link_to '-Login', login_path %>
-     |
-    <%= link_to '-Sign Up', new_user_path %>
-  <% end %>
-</div>
+    <% else %>
+      <%= link_to '-Login', login_path %>
+      <%= link_to '-Sign Up', new_user_path %>
+      <%= link_to '-About Us', about_path %>
+    <% end %>
+  </div>
 
-<div id="main">
-  <button class="openbtn" onclick="openNav()">&#9776;</button>
-</div>
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">&#9776;</button>
+    <div id="centerScreen">
+      <%= image_tag("logo.png", :alt => "rss feed") %>
+    </div>
+  </div>
+
   <head>
     <title>Lockout Nighlife</title>
     <%= csrf_meta_tags %>
@@ -29,11 +35,14 @@
     <%= cloudinary_js_config %>
     <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
   </head>
+
   <body>
+
     <%= yield %>
     <footer id='footer'>
 
       <p>--Lockout Nightlife--</p>
     </footer>
   </body>
+
 </html>
