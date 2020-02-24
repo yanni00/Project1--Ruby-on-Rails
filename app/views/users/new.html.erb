@@ -1,38 +1,45 @@
-<h2>Create New Account</h2>
+<div id="centerScreen">
+  <div id="loginBox">
 
-<% if @user.errors.any? %>
-  <p>Please Correct The Following Errors</p>
-  <ul>
-    <% @user.errors.full_messages.each do |e| %>
-    <li><%= e %></li>
+
+    <h2>Create New Account</h2>
+
+    <% if @user.errors.any? %>
+      <p>Please Correct The Following Errors</p>
+      <ul>
+        <% @user.errors.full_messages.each do |e| %>
+        <li><%= e %></li>
+        <% end %>
+      </ul>
     <% end %>
-  </ul>
-<% end %>
 
 
-<%= form_for @user do |f| %>
+    <%= form_for @user do |f| %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br>
 
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <br>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+      <br>
 
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, class: 'form-control' %>
-    <br>
-  </div>
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control' %>
+        <br>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, class: 'form-control' %>
-    <br>
-  </div>
+      <div class="form-group">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+        <br>
+      </div>
 
-  <%= submit_tag 'Sign up' %>
+      <%= submit_tag 'Sign up' %>
 
-<% end %>
+    <% end %>
+    
+  </div> <!-- End of loginBox -->
+</div> <!-- End of centerScreen -->

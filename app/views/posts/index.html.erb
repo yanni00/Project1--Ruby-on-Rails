@@ -1,8 +1,0 @@
-<h1>Forum Posts</h1>
-<%= link_to '-Create Post', new_post_path %>
-<hr>
-<% @posts.each do |post| %>
-<h3><%= post.title %> - Created at <%= post.created_at.strftime("%k:%M:%S - %v") %></h3>
-  <p><%= post.body %></p>
-  <hr>
-<% end %>

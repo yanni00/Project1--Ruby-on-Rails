@@ -23,7 +23,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
-    @characters = Character.where :user => @current_user
   end
 
   def edit
@@ -42,4 +41,4 @@ class UsersController < ApplicationController
 
   end
 
-end 
+end

@@ -1,7 +1,27 @@
 <!DOCTYPE html>
 <html>
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <% if @current_user.present? %>
+    Welcome, <%= @current_user.name %>
+    <% if @current_user.admin? %>
+    (Admin Level Account)
+    <% end  %>
+
+    <h3><%= link_to '-Logout', login_path, method: 'delete' %></h3>
+
+  <% else %>
+    <%= link_to '-Login', login_path %>
+     |
+    <%= link_to '-Sign Up', new_user_path %>
+  <% end %>
+</div>
+
+<div id="main">
+  <button class="openbtn" onclick="openNav()">&#9776;</button>
+</div>
   <head>
-    <title>YumCha</title>
+    <title>Lockout Nighlife</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -10,36 +30,10 @@
     <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
   </head>
   <body>
-    <!-- <h1>Yum Cha Guild Database</h1> -->
-    <div id="websiteName">
-    <h1><%= link_to 'Yum Cha Guild Database', root_path %></h1>
-    </div>
-    <div id="main">
-    <header>
-      <nav>
-        <% if @current_user.present? %>
-          Welcome, <%= @current_user.name %>
-          <% if @current_user.admin? %>
-          (Admin Level Account)
-          <% end  %>
-
-          <h3><%= link_to '-Logout', login_path, method: 'delete' %> <%= link_to '-Forum', root_path %> <%= link_to '-Characters', characters_path %></h3>
-
-        <% else %>
-          <%= link_to '-Login', login_path %>
-           |
-          <%= link_to '-Sign Up', new_user_path %>
-        <% end %>
-      </nav>
-      <hr>
-    </header>
-  </div>
-
-
     <%= yield %>
     <footer id='footer'>
 
-      <p>"&copy;" Yum Cha Guild Charter</p>
+      <p>--Lockout Nightlife--</p>
     </footer>
   </body>
 </html>
